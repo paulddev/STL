@@ -1,4 +1,4 @@
-# CPP_STL_Practice
+# STL_Practice
 STL 공부에 대해서 공부하고 적용시켜보자.
 
 * 참고한 문서
