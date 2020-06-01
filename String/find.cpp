@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 
+/* find : ë¬¸ìì—´ì—ì„œ ì›í•˜ëŠ” ë¬¸ìì—´ì˜ ìœ„ì¹˜ë¥¼ ì°¾ëŠ”ë‹¤. */
+
 void print(std::string::size_type n, std::string const& s)
 {
 	if (n == std::string::npos) std::cout << "not found\n";
@@ -12,21 +14,26 @@ int main()
 {
 	std::string::size_type n;
 	std::string const s = "This is a string";
-
-	// sÀÇ Ã³À½ºÎÅÍ Ã£´Â´Ù.
+	std::cout << "string : " << s << "\n\n";
+	
+	// sì˜ ì²˜ìŒë¶€í„° ì°¾ëŠ”ë‹¤.
 	n = s.find("is");
+	std::cout << "find index : " << n << '\n';
 	print(n, s);
 
-	// sÀÇ 5¹øÂ° ¹®ÀÚºÎÅÍ Ã£´Â´Ù.
+	// sì˜ 5ë²ˆì§¸ ë¬¸ìë¶€í„° ì°¾ëŠ”ë‹¤.
 	n = s.find("is", 5);
+	std::cout << "find index : " << n << '\n';
 	print(n, s);
 
-	// ´ÜÀÏ ¹®ÀÚ (a) ¸¦ Ã£´Â´Ù.
+	// ë‹¨ì¼ ë¬¸ì (a) ë¥¼ ì°¾ëŠ”ë‹¤.
 	n = s.find('a');
+	std::cout << "find index : " << n << '\n';
 	print(n, s);
 
-	// ´ÜÀÏ ¹®ÀÚ (q) ¸¦ Ã£´Â´Ù.
+	// ë‹¨ì¼ ë¬¸ì (q) ë¥¼ ì°¾ëŠ”ë‹¤.
 	n = s.find('q');
+	std::cout << "find index : " << n << '\n'; // npos ë¥¼ ë°›ëŠ”ë‹¤. ì°¾ì§€ ëª»í–ˆìœ¼ë¯€ë¡œ...
 	print(n, s);
 
 	return 0;
