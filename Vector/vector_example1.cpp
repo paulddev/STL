@@ -12,7 +12,7 @@ int main()
 
 	for (std::vector<int>::size_type i = 0; i < vec.size(); i++)
 	{
-		std::cout << "vec ÀÇ " << i + 1 << " ¹øÂ° ¿ø¼Ò : " << vec[i] << std::endl;
+		std::cout << "vec ì˜ " << i + 1 << "  : " << vec[i] << std::endl;
 	}
 
 	return 0;
