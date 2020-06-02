@@ -3,17 +3,23 @@
 #include <algorithm>
 using namespace std;
 
+/*
+vectorë¼ëŠ” ì‹œí€€ìŠ¤ ì»¨í…Œì´ë„ˆë¥¼ ì •ë ¬í•  ë•ŒëŠ”
+sort(vec.begin(), vec.end()) ë¥¼ ì´ìš©í•œë‹¤.
+sort(vec.begin(), vec.end(), compareí•¨ìˆ˜) ë¥¼ ì´ìš©í•´ì„œ ì •ë ¬ ê¸°ì¤€ì„ ë‚´ê°€ ë§Œë“¤ ìˆ˜ ìˆë‹¤.
+*/
+
 int main() {
 	vector<pair<int, string>> v;
-	v.push_back(pair<int, string>(90, "¹Ú ÇÑ ¿ï"));
-	v.push_back(pair<int, string>(85, "ÀÌ ÅÂ ÀÏ"));
-	v.push_back(pair<int, string>(82, "±è µµ Çö"));
-	v.push_back(pair<int, string>(98, "°­ Á¾ ±¸"));
-	v.push_back(pair<int, string>(79, "ÀÌ »ó ¿í"));
+	v.push_back(pair<int, string>(90, "ë°• í•œ ìš¸"));
+	v.push_back(pair<int, string>(85, "ì´ íƒœ ì¼"));
+	v.push_back(pair<int, string>(82, "ê¹€ ë„ í˜„"));
+	v.push_back(pair<int, string>(98, "ê°• ì¢… êµ¬"));
+	v.push_back(pair<int, string>(79, "ì´ ìƒ ìš±"));
 
-	// ¿À¸§Â÷¼øÀ¸·Î Á¤·Ä
+	// ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬
 	sort(v.begin(), v.end());
-	// first : int, second : stringÀ» ÀÇ¹Ì
+	// first : int, second : stringì„ ì˜ë¯¸
 	for (int i = 0; i < v.size(); i++) {
 		cout << v[i].second << ' ';
 	}
