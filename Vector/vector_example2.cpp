@@ -10,13 +10,13 @@ int main()
 	vec.push_back(30);
 	vec.push_back(40);
 
-	// ¹İº¹ÀÚ »ç¿ë
+	// ë°˜ë³µì ì‚¬ìš©
 	for (std::vector<int>::iterator itr = vec.begin(); itr != vec.end(); ++itr)
 	{
 		std::cout << *itr << std::endl;
 	}
 
 	std::vector<int>::iterator itr = vec.begin() + 2;
-	std::cout << "3 ¹øÂ° ¿ø¼Ò : " << *itr << std::endl;
+	std::cout << "3 ë²ˆì§¸  : " << *itr << std::endl;
 	return 0;
 }
