@@ -3,23 +3,31 @@
 #include <algorithm>
 using namespace std;
 
+/*
+í•˜ë‚˜ì˜ ì»¨í…Œì´ë„ˆ ì•ˆì— ì—¬ëŸ¬ ê°œì˜ êµ¬ì„± ìš”ì†Œê°€ ë“¤ì–´ê°”ì„ ë•Œ,
+ì •ë ¬í•˜ëŠ” ë°©ë²•
+
+vectorì˜ ê²½ìš°ëŠ” compare í•¨ìˆ˜ë¥¼ ë”°ë¡œ ë§Œë“¤ì–´ì„œ ì •ë ¬ì˜ ê¸°ì¤€ì„ ë‚´ê°€ ë§Œë“¤ ìˆ˜ ìˆë‹¤.
+sort(vec.begin(), vec.end(), compare);
+*/
+
 bool compare(pair<string, pair<int, int>> a, pair<string, pair<int, int>> b) {
-	if (a.second.first == b.second.first) { // Á¡¼ö°¡ °°´Ù¸é
-		return a.second.second > b.second.second; // ´õ ¾î¸° ÇĞ»ıÀÌ ³ô´Ù.
+	if (a.second.first == b.second.first) { // ì ìˆ˜ê°€ ê°™ë‹¤ë©´
+		return a.second.second > b.second.second; // ë” ì–´ë¦° í•™ìƒì´ ë†’ë‹¤.
 	}
 	else {
-		return a.second.first > b.second.first; // ¼ºÀûÀÌ ´õ ³ôÀº ¼øÀ¸·Î
+		return a.second.first > b.second.first; // ì„±ì ì´ ë” ë†’ì€ ìˆœìœ¼ë¡œ
 	}
 }
 
 int main() {
 	vector<pair<string, pair<int, int>>> v;
-	// º¸Åë ÀÌ·±°æ¿ì Å¬·¡½º¸¦ µû·Î Á¤ÀÇÇØ¼­ Á¤·ÄÇÏ´Â °ÍÀÌ ´õ °£ÆíÇÒ ¼ö ÀÖ´Ù.
-	v.push_back(pair<string, pair<int, int>>("±èµµÇö", pair<int, int>(90, 19950208)));
-	v.push_back(pair<string, pair<int, int>>("ÀÌÅÂÀÏ", pair<int, int>(97, 19930518)));
-	v.push_back(pair<string, pair<int, int>>("¹ÚÇÑ¿ï", pair<int, int>(95, 19930203)));
-	v.push_back(pair<string, pair<int, int>>("ÀÌ»ó¿í", pair<int, int>(90, 19921207)));
-	v.push_back(pair<string, pair<int, int>>("°­Á¾±¸", pair<int, int>(88, 19900302)));
+	// ë³´í†µ ì´ëŸ°ê²½ìš° í´ë˜ìŠ¤ë¥¼ ë”°ë¡œ ì •ì˜í•´ì„œ ì •ë ¬í•˜ëŠ” ê²ƒì´ ë” ê°„í¸í•  ìˆ˜ ìˆë‹¤.
+	v.push_back(pair<string, pair<int, int>>("ê¹€ë„í˜„", pair<int, int>(90, 19950208)));
+	v.push_back(pair<string, pair<int, int>>("ì´íƒœì¼", pair<int, int>(97, 19930518)));
+	v.push_back(pair<string, pair<int, int>>("ë°•í•œìš¸", pair<int, int>(95, 19930203)));
+	v.push_back(pair<string, pair<int, int>>("ì´ìƒìš±", pair<int, int>(90, 19921207)));
+	v.push_back(pair<string, pair<int, int>>("ê°•ì¢…êµ¬", pair<int, int>(88, 19900302)));
 
 	sort(v.begin(), v.end(), compare);
 	for (int i = 0; i < v.size(); i++) {
