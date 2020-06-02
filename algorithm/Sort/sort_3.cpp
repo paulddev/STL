@@ -2,8 +2,13 @@
 #include <algorithm>
 using namespace std;
 
-// �����͸� ��� �����غ���
-// ��� �����͵��� ��ü�� �����Ǿ� �ֱ� ������
+/*
+정렬하는 기준을 기본적인 자료형이 아닌 클래스를 만들어서 정렬할 경우는 다음과 같이 한다.
+클래스 내부에서 operator< 를 정의하여 구현한다.
+*/
+
+// 데이터를 묶어서 정렬해보기
+// 모든 데이터들이 객체로 정리되어 있기 때문에
 class Student {
 public:
 	string name;
@@ -14,24 +19,24 @@ public:
 		this->score = score;
 	}
 
-	// ���� ������ '������ ���� ����'
+	// 정렬 기준은 '점수가 작은 순서'
 	bool operator <(Student& student) {
-		// �ٸ� �л� student�� �񱳸� �� ��,
-		// �� �켱����(this->score)�� student.score���� �۴ٸ�
-		// �� ���ٴ� ���̴�.
+		// 다른 학생 student와 비교를 할 때,
+		// 내 우선순위(this->score)가 student.score보다 작다면
+		// 더 높다는 뜻이다.
 		return this->score < student.score;
 	}
 };
 int main() {
 	Student students[] = {
-		Student("�� �� ��", 90),
-		Student("�� �� ��", 93),
-		Student("�� �� ��", 94),
-		Student("�� �� ��", 84),
-		Student("�� �� ��", 74)
+		Student("김 도 현", 90),
+		Student("이 상 욱", 93),
+		Student("김 진 솔", 94),
+		Student("박 다 솜", 84),
+		Student("한 다 은", 74)
 	};
-	// �⺻������ Student Ŭ���� �ȿ���
-	// ���ı����� ���� �����߱� ������ ������ �ȴ�.
+	// 기본적으로 Student 클래스 안에서
+	// 정렬기준을 따로 정의했기 때문에 정렬이 된다.
 	sort(students, students + 5);
 	for (int i = 0; i < 5; i++) {
 		cout << students[i].name << ' ';
