@@ -8,12 +8,13 @@ int main()
 	vec.push_back(1);
 	vec.push_back(2);
 	vec.push_back(3);
-
-	// range-based for ¹®
-	// for(/* ¿ø¼Ò¸¦ ¹Ş´Â º¯¼ö Á¤ÀÇ */ : /* ÄÁÅ×ÀÌ³Ê */)
+        
+	// C++ 11ë¶€í„°
+	// range-based for ë¬¸
+	// for(/* ì›ì†Œë¥¼ ë°›ëŠ” ë³€ìˆ˜ ì •ì˜ */ : /* ì»¨í…Œì´ë„ˆ */)
 	for (int elem : vec)
 	{
-		std::cout << "¿ø¼Ò : " << elem << std::endl;
+		std::cout << "ì›ì†Œ : " << elem << std::endl;
 	}
 
 	return 0;
