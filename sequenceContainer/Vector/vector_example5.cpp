@@ -19,21 +19,22 @@ int main()
 	vec.push_back(30);
 	vec.push_back(40);
 
-	std::cout << "ÃÊ±â vec »óÅÂ" << std::endl;
+	std::cout << "ì´ˆê¸° vec ìƒíƒœ" << std::endl;
 	print_vector(vec);
 
-	// itr´Â vec[2]¸¦ °¡¸®Å²´Ù.
+	// itrëŠ” vec[2]ë¥¼ ê°€ë¦¬í‚¨ë‹¤.
 	std::vector<int>::iterator itr = vec.begin() + 2;
 
-	// vec[2] ÀÇ °ªÀ» 50À¸·Î ¹Ù²Û´Ù.
+	// vec[2] ì˜ ê°’ì„ 50ìœ¼ë¡œ ë°”ê¾¼ë‹¤.
 	*itr = 50;
 
 	std::cout << "----------------------------" << std::endl;
 	print_vector(vec);
-
+        
+	// const_iteratorë¥¼ ì´ìš©í•´ì„œ vectorë¥¼ ê°€ë¦¬í‚¤ê²Œ ë˜ë©´, ì´ê²ƒì„ í†µí•´ ìˆ˜ì •ì„ í•  ìˆ˜ ì—†ëŠ” ìƒìˆ˜ ë°˜ë³µìì¸ë‹¤.
 	std::vector<int>::const_iterator citr = vec.begin() + 2;
 
-	// »ó¼ö ¹İº¹ÀÚ°¡ °¡¸®Å°´Â °ªÀº ¹Ù²Ü ¼ö ¾ø´Ù.
+	// ìƒìˆ˜ ë°˜ë³µìê°€ ê°€ë¦¬í‚¤ëŠ” ê°’ì€ ë°”ê¿€ ìˆ˜ ì—†ë‹¤.
 	//*citr = 30;
 	return 0;
 }
