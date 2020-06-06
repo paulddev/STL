@@ -2,10 +2,11 @@
 #include <iostream>
 #include <vector>
 
-// ÅÛÇÃ¸´ ¹öÀü
+// í…œí”Œë¦¿ ë²„ì „
 template<typename T>
 void print_vector(std::vector<T>& vec)
 {
+        // typenameì„ ê¼­ ëª…ì‹œí•´ì£¼ì.
 	for (typename std::vector<T>::iterator itr = vec.begin(); itr != vec.end(); ++itr)
 	{
 		std::cout << *itr << std::endl;
@@ -20,16 +21,16 @@ int main()
 	vec.push_back(30);
 	vec.push_back(40);
 
-	std::cout << "Ã³À½ º¤ÅÍ »óÅÂ" << std::endl;
+	std::cout << "ì²˜ìŒ ë²¡í„° ìƒíƒœ" << std::endl;
 	print_vector(vec);
 	std::cout << "---------------------------------------" << std::endl;
 
-	// vec[2] ¾Õ¿¡ 15 Ãß°¡
+	// vec[2] ì•ì— 15 ì¶”ê°€
 	vec.insert(vec.begin() + 2, 15);
 	print_vector(vec);
 	std::cout << "---------------------------------------" << std::endl;
 
-	// vec[3] Á¦°Å
+	// vec[3] ì œê±°
 	vec.erase(vec.begin() + 3);
 	print_vector(vec);
 	return 0;
