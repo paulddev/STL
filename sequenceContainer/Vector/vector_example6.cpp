@@ -19,11 +19,11 @@ int main()
 	vec.push_back(30);
 	vec.push_back(40);
 
-	std::cout << "ÃÊ±â vec »óÅÂ" << std::endl;
+	std::cout << "ì´ˆê¸° vec ìƒíƒœ" << std::endl;
 	print_vector(vec);
 
-	std::cout << "¿ªÀ¸·Î vec Ãâ·ÂÇÏ±â!" << std::endl;
-	// itr ´Â vec[2] ¸¦ °¡¸®Å²´Ù.
+	std::cout << "ì—­ìœ¼ë¡œ vec ì¶œë ¥í•˜ê¸°!" << std::endl;
+	// reverse_iterator ëŠ” vector ì»¨í…Œì´ë„ˆë¥¼ ì—­ìˆœìœ¼ë¡œ ë³´ê² ë‹¤ëŠ” ì—­ë°˜ë³µìì´ë‹¤.
 	std::vector<int>::reverse_iterator r_iter = vec.rbegin();
 	for (; r_iter != vec.rend(); r_iter++)
 	{
