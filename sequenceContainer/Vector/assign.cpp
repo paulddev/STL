@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-/* assign : º¤ÅÍ¿¡ »õ·Î¿î ³»¿ëÀ» ³Ö´Âµ¥, ¿ø·¡ º¤ÅÍ¿¡ ÀÖ¾ú´ø ¿ø¼ÒµéÀº »èÁ¦µÈ´Ù. */
+/* assign : ë²¡í„°ì— ìƒˆë¡œìš´ ë‚´ìš©ì„ ë„£ëŠ”ë°, ì›ë˜ ë²¡í„°ì— ìˆì—ˆë˜ ì›ì†Œë“¤ì€ ì‚­ì œëœë‹¤. */
 
 int main()
 {
@@ -10,7 +10,7 @@ int main()
 	vector<int> second;
 	vector<int> third;
 
-	first.assign(7, 100); // 100À» 7¹ø ¹İº¹ÇØ¼­ ³Ö±â.
+	first.assign(7, 100); // 100ì„ 7ë²ˆ ë°˜ë³µí•´ì„œ ë„£ê¸°.
 
 	vector<int>::iterator it;
 	it = first.begin() + 1;
@@ -19,13 +19,14 @@ int main()
 
 	int myints[] = { 1776, 7,4 };
 	third.assign(myints, myints + 3);
-
+        
+	// 100 100 100 100 100 100 100
 	for (int i = 0; i < first.size(); i++) cout << first[i] << ' ';
 	cout << endl;
-
+        // 100 100 100 100 100
 	for (int i = 0; i < second.size(); i++) cout << second[i] << ' ';
 	cout << endl;
-
+        // 1776 7 4
 	for (int i = 0; i < third.size(); i++) cout << third[i] << ' ';
 	cout << endl;
 
