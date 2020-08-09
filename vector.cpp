@@ -3,33 +3,85 @@
 using namespace std;
 
 // vector
-// µ¿Àû ¹è¿­, ±æÀÌ¸¦ º¯°æÇÒ ¼ö ÀÖ´Â ¹è¿­
+// ë™ì  ë°°ì—´, ê¸¸ì´ë¥¼ ë³€ê²½í•  ìˆ˜ ìˆëŠ” ë°°ì—´
 /*
-vector<vector<int>> v; 2Â÷¿ø º¤ÅÍ
-v.push_back(n);        data Ãß°¡
-v.pop_back():          data »èÁ¦
-v.clear();             º¤ÅÍ ÃÊ±âÈ­
-v.size();              º¤ÅÍÀÇ Å©±â
-v.empty();             ºñ¾îÀÖ´Ù¸é true
-v.front();             º¤ÅÍÀÇ Ã¹ ¹øÂ° ¿ø¼Ò
-v.back();              º¤ÅÍÀÇ ¸¶Áö¸· ¿ø¼Ò
-v.insert(v.begin(), 5, 0);  º¤ÅÍÀÇ Ã¹ ¹øÂ° ¿ø¼Ò ¾Õ¿¡ 0À» 5°³ »ğÀÔ
-v.erase(v.begin() + 2);     º¤ÅÍÀÇ Ã¹ ¹øÂ° ¿ø¼Ò¿¡¼­ 2¸¸Å­ ¿·À¸·Î ¶³¾îÁø ¿ø¼Ò »èÁ¦
+vector<vector<int>> v; 2ì°¨ì› ë²¡í„°
+v.push_back(n);        data ì¶”ê°€
+v.pop_back():          data ì‚­ì œ
+v.clear();             ë²¡í„° ì´ˆê¸°í™”
+v.size();              ë²¡í„°ì˜ í¬ê¸°
+v.empty();             ë¹„ì–´ìˆë‹¤ë©´ true
+v.front();             ë²¡í„°ì˜ ì²« ë²ˆì§¸ ì›ì†Œ
+v.back();              ë²¡í„°ì˜ ë§ˆì§€ë§‰ ì›ì†Œ
+v.insert(v.begin(), 5, 0);  ë²¡í„°ì˜ ì²« ë²ˆì§¸ ì›ì†Œ ì•ì— 0ì„ 5ê°œ ì‚½ì…
+v.erase(v.begin() + 2);     ë²¡í„°ì˜ ì²« ë²ˆì§¸ ì›ì†Œì—ì„œ 2ë§Œí¼ ì˜†ìœ¼ë¡œ ë–¨ì–´ì§„ ì›ì†Œ ì‚­ì œ
 */
+
+template<typename T>
+void print(const vector<T>& v)
+{
+	for(const auto elem : v)
+		cout << elem << ' ';
+	cout << endl;
+}
+
+struct Node
+{
+	int data;
+	Node* next;
+};
 
 int main()
 {
 	vector<int> v = { 1,2,3,4,5 };
 
-	// range-based for statement ¹üÀ§ ±â¹İ for¹®
+	// range-based for statement ë²”ìœ„ ê¸°ë°˜ forë¬¸
 	for (int elem : v)
 	{
 		cout << elem << ' ';
 	}
 	cout << endl;
 
-	// iterator »ç¿ë
+	// iterator ì‚¬ìš©
 	for (vector<int>::iterator it = v.begin(); it != v.end(); ++it)
 		cout << *it << ' ';
 	cout << endl;
+	
+	// ë‹¤ì–‘í•œ ì„ ì–¸ ë¶€ë¶„
+	vector<int> vec1;
+	vector<double> vec2;
+	vector<Node> vec3;
+	
+	// ë²¡í„°ì˜ ì´ˆê¸° í¬ê¸°ë¥¼ 5ë¡œ ì„¤ì •, ìš”ì†Œë“¤ì€ 0ìœ¼ë¡œ ì´ˆê¸°í™”
+	vector<int> vec4(5);
+	
+	// ë²¡í„°ì˜ ì´ˆê¸° í¬ê¸°ë¥¼ 5ë¡œ ì„¤ì •, ìš”ì†Œë“¤ì€ 1ìœ¼ë¡œ ì´ˆê¸°í™”
+	vector<int> vec5(5, 1);
+	
+	// n x m ì¸ 2ì°¨ì› ë²¡í„°ë¥¼ ì„ ì–¸í•˜ê³  0ìœ¼ë¡œ ì´ˆê¸°í™”
+	int n = 5, m = 6;
+	vector<vector<int> > vec6(n, vector<int>(m, 0));
+	
+	// ì‚½ì…
+	vec1.push_back(10);
+	
+	// ì‚­ì œ
+	vec1.pop_back();
+	
+	// í¬ê¸°
+	cout << "vec1.size() : " << vec1.size() << endl;
+	
+	// í¬ê¸° ì¬ì„¤ì •
+	vec1.resize(10);
+	cout << "vec1.size() : " << vec1.size() << endl;
+	
+	// [a, b) ì£¼ì†Œ êµ¬ê°„ì— í•´ë‹¹í•˜ëŠ” ì›ì†Œ ì‚­ì œ
+	vec1.erase(vec1.begin(), vec1.end());
+	cout << "vec1.size() : " << vec1.size() << endl;
+	
+	// ì´ëŸ° ê²ƒë„ ê°€ëŠ¥
+	vector<int> v1 = {1,2,3,4,5};
+	vector<int> v2 = vector<int>(v1.begin() + 2, v1.end());
+	print(v2);
+	return 0;
 }
