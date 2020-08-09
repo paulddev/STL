@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <algorithm> // ¿©·¯°¡Áö ¾Ë°í¸®ÁòÀÌ µé¾îÀÖ´Ù.
+#include <algorithm> // ì—¬ëŸ¬ê°€ì§€ ì•Œê³ ë¦¬ì¦˜ì´ ë“¤ì–´ìžˆë‹¤.
 using namespace std;
 
 bool compare(const int a, const int b)
@@ -26,30 +26,30 @@ int main()
 {
 	/* lower_bound
 	*  lower_bound(begin, end, value, [cmp])
-	*  [begin, end)¿¡¼­ valueº¸´Ù ÀÛÁö ¾ÊÀº Ã¹ ¹øÂ° iterator ¹ÝÈ¯
+	*  [begin, end)ì—ì„œ valueë³´ë‹¤ ìž‘ì§€ ì•Šì€ ì²« ë²ˆì§¸ iterator ë°˜í™˜
 	 
-	   Ã£°íÀÚ ÇÏ´Â °ª ÀÌ»óÀÌ Ã³À½ ³ªÅ¸³ª´Â À§Ä¡
-       ±¸°£ ³»ÀÇ ¿ø¼ÒµéÀÌ ¿À¸§Â÷¼øÀ¸·Î Á¤·Ä ÇÊ¿ä. (¹è¿­, ¸®½ºÆ®)
-	   lower_bound°¡ Ã£À¸·Á ÇÏ´Â key°ªÀÌ "¾øÀ¸¸é" key°ªº¸´Ù Å« °¡Àå ÀÛÀº Á¤¼ö¸¦ Ã£´Â´Ù.
-	   lower_bound°¡ Ã£À¸·Á ÇÏ´Â key°ªÀÌ Á¸ÀçÇÏ¸é key°ª
-	   °°Àº ¿ø¼Ò°¡ ¿©·¯ °³ ÀÖ¾îµµ »ó°ü ¾øÀ¸¸ç, À¯ÀÏÇÑ ÇØ¸¦ ±¸ÇÑ´Ù.
-	   ±¸°£ÀÌ [start, end]ÀÎ ¹è¿­ÀÌ ÀÖÀ» ¶§, Áß°£ À§Ä¡ÀÇ index¸¦ mid¶ó ÇÏ¸é,
-	   arr[mid-1] < key ÀÌ¸é¼­ arr[mid] >= key ÀÎ ÃÖ¼ÒÀÇ m °ªÀ» Ã£À¸¸é µÈ´Ù. (m >= 2)
-	   ÀÌ¸»Àº key°¡ ÇöÀç mid º¸´Ù ÀÛ´Ù¸é [start, mid]·Î Å½»öÀ» ´Ù½ÃÇÏ°í,
-	   key°¡ arr[mid-1]º¸´Ù Å©¸é [mid+1, end]·Î Å½»öÀ» ´Ù½ÃÇÑ´Ù´Â ¶æÀÌ´Ù.
+	   ì°¾ê³ ìž í•˜ëŠ” ê°’ ì´ìƒì´ ì²˜ìŒ ë‚˜íƒ€ë‚˜ëŠ” ìœ„ì¹˜
+           êµ¬ê°„ ë‚´ì˜ ì›ì†Œë“¤ì´ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬ í•„ìš”. (ë°°ì—´, ë¦¬ìŠ¤íŠ¸)
+	   lower_boundê°€ ì°¾ìœ¼ë ¤ í•˜ëŠ” keyê°’ì´ "ì—†ìœ¼ë©´" keyê°’ë³´ë‹¤ í° ê°€ìž¥ ìž‘ì€ ì •ìˆ˜ë¥¼ ì°¾ëŠ”ë‹¤.
+	   lower_boundê°€ ì°¾ìœ¼ë ¤ í•˜ëŠ” keyê°’ì´ ì¡´ìž¬í•˜ë©´ keyê°’
+	   ê°™ì€ ì›ì†Œê°€ ì—¬ëŸ¬ ê°œ ìžˆì–´ë„ ìƒê´€ ì—†ìœ¼ë©°, ìœ ì¼í•œ í•´ë¥¼ êµ¬í•œë‹¤.
+	   êµ¬ê°„ì´ [start, end]ì¸ ë°°ì—´ì´ ìžˆì„ ë•Œ, ì¤‘ê°„ ìœ„ì¹˜ì˜ indexë¥¼ midë¼ í•˜ë©´,
+	   arr[mid-1] < key ì´ë©´ì„œ arr[mid] >= key ì¸ ìµœì†Œì˜ m ê°’ì„ ì°¾ìœ¼ë©´ ëœë‹¤. (m >= 2)
+	   ì´ë§ì€ keyê°€ í˜„ìž¬ mid ë³´ë‹¤ ìž‘ë‹¤ë©´ [start, mid]ë¡œ íƒìƒ‰ì„ ë‹¤ì‹œí•˜ê³ ,
+	   keyê°€ arr[mid-1]ë³´ë‹¤ í¬ë©´ [mid+1, end]ë¡œ íƒìƒ‰ì„ ë‹¤ì‹œí•œë‹¤ëŠ” ëœ»ì´ë‹¤.
 
-	   ¹ÝÈ¯ÇüÀÌ iterator ¶Ç´Â ÁÖ¼Ò°ªÀÌ¹Ç·Î
-	   v.begin()À» »©ÁÖ°Å³ª ¹è¿­ÀÇ Ã¹¹øÂ° ÁÖ¼Ò¸¦ °¡¸®Å°´Â ¹è¿­ÀÇ ÀÌ¸§À» »©ÁÖ¸é ¸î ¹øÂ° ÀÎÀÚÀÎÁö
-	   ¾Ë ¼ö ÀÖ´Ù.
+	   ë°˜í™˜í˜•ì´ iterator ë˜ëŠ” ì£¼ì†Œê°’ì´ë¯€ë¡œ
+	   v.begin()ì„ ë¹¼ì£¼ê±°ë‚˜ ë°°ì—´ì˜ ì²«ë²ˆì§¸ ì£¼ì†Œë¥¼ ê°€ë¦¬í‚¤ëŠ” ë°°ì—´ì˜ ì´ë¦„ì„ ë¹¼ì£¼ë©´ ëª‡ ë²ˆì§¸ ì¸ìžì¸ì§€
+	   ì•Œ ìˆ˜ ìžˆë‹¤.
 	   */
 
-	// n°³·Î ÀÌ·ç¾îÁø Á¤¼ö ÁýÇÕ¿¡¼­ ¿øÇÏ´Â ¼ö k ÀÌ»óÀÎ ¼ö°¡ Ã³À½À¸·Î µîÀåÇÏ´Â À§Ä¡¸¦ Ã£À¸½Ã¿À.
+	// nê°œë¡œ ì´ë£¨ì–´ì§„ ì •ìˆ˜ ì§‘í•©ì—ì„œ ì›í•˜ëŠ” ìˆ˜ k ì´ìƒì¸ ìˆ˜ê°€ ì²˜ìŒìœ¼ë¡œ ë“±ìž¥í•˜ëŠ” ìœ„ì¹˜ë¥¼ ì°¾ìœ¼ì‹œì˜¤.
 	int arr[10] = { 1,2,4,5,6,6,7,7,7,9 };
 	print(arr, 10);
 	
 
-	// std::lower_bound(A, A+n, K)´Â ¾î¶² À§Ä¡,
-	// std::lower_bound(A, A+n, K)-A+1Àº A¹è¿­¿¡¼­ »ó´ëÀû À§Ä¡(ÀÎµ¦½º)
+	// std::lower_bound(A, A+n, K)ëŠ” ì–´ë–¤ ìœ„ì¹˜,
+	// std::lower_bound(A, A+n, K)-A+1ì€ Aë°°ì—´ì—ì„œ ìƒëŒ€ì  ìœ„ì¹˜(ì¸ë±ìŠ¤)
 	cout << "lower_bound(0) : " << lower_bound(arr, arr + 10, 0) - arr + 1 << endl; // 1
 	cout << "lower_bound(1) : " << lower_bound(arr, arr + 10, 1) - arr + 1 << endl; // 1
 	cout << "lower_bound(5) : " << lower_bound(arr, arr + 10, 5) - arr + 1 << endl; // 4
@@ -63,21 +63,21 @@ int main()
 
 	int a[5] = { 1,2,3,4,5 };
 	print(a, 5);
-	// ¸ðµç ¿ø¼Ò°¡ kº¸´Ù ÀÛÀ» ¶§¿¡´Â n + 1À» Ãâ·Â
+	// ëª¨ë“  ì›ì†Œê°€ kë³´ë‹¤ ìž‘ì„ ë•Œì—ëŠ” n + 1ì„ ì¶œë ¥
 	cout << "lower_bound(7) : " << lower_bound(a, a + 5, 7) - a + 1 << endl; // 6
 	cout << endl;
 
 	/* upper_bound
 	*  upper_bound(begin, end, value, [cmp])
-	*  [begin, end)¿¡¼­ valueº¸´Ù Å« Ã¹ ¹øÂ° iterator ¹ÝÈ¯
+	*  [begin, end)ì—ì„œ valueë³´ë‹¤ í° ì²« ë²ˆì§¸ iterator ë°˜í™˜
 	
-	   ÀÌÁø Å½»öÀÇ ±â¹Ý
-	   ±¸°£ ³»ÀÇ ¿ø¼ÒµéÀÌ ¿À¸§Â÷¼øÀ¸·Î Á¤·Ä ÇÊ¿ä.
-	   upper_bound´Â key °ªÀ» ÃÊ°úÇÏ´Â °¡Àå Ã¹ ¹øÂ° ¿ø¼ÒÀÇ À§Ä¡¸¦ ±¸ÇÑ´Ù.
-	   Ã£°íÀÚ ÇÏ´Â °ªº¸´Ù Å« °ªÀÌ Ã³À½À¸·Î ³ªÅ¸³ª´Â À§Ä¡
-	   °°Àº ¿ø¼Ò°¡ ¿©·¯ °³ Á¸ÀçÇØµµ Ç×»ó À¯ÀÏÇÑ ÇØ¸¦ ±¸ÇÒ ¼ö ÀÖ´Ù.
-	   arr[mid-1] <= key ÀÌ¸é¼­ arr[mid] > keyÀÎ ÃÖ¼ÒÀÇ m °ªÀ» Ã£À¸¸é µÈ´Ù. (m >= 2)
-	   (°°Àº °ªÀÌ ¾Æ´Ñ) key °ªÀ» ÃÊ°úÇÏ´Â °¡Àå Ã¹ ¹øÂ° ¿ø¼ÒÀÇ À§Ä¡¶ó´Â °Í
+	   ì´ì§„ íƒìƒ‰ì˜ ê¸°ë°˜
+	   êµ¬ê°„ ë‚´ì˜ ì›ì†Œë“¤ì´ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬ í•„ìš”.
+	   upper_boundëŠ” key ê°’ì„ ì´ˆê³¼í•˜ëŠ” ê°€ìž¥ ì²« ë²ˆì§¸ ì›ì†Œì˜ ìœ„ì¹˜ë¥¼ êµ¬í•œë‹¤.
+	   ì°¾ê³ ìž í•˜ëŠ” ê°’ë³´ë‹¤ í° ê°’ì´ ì²˜ìŒìœ¼ë¡œ ë‚˜íƒ€ë‚˜ëŠ” ìœ„ì¹˜
+	   ê°™ì€ ì›ì†Œê°€ ì—¬ëŸ¬ ê°œ ì¡´ìž¬í•´ë„ í•­ìƒ ìœ ì¼í•œ í•´ë¥¼ êµ¬í•  ìˆ˜ ìžˆë‹¤.
+	   arr[mid-1] <= key ì´ë©´ì„œ arr[mid] > keyì¸ ìµœì†Œì˜ m ê°’ì„ ì°¾ìœ¼ë©´ ëœë‹¤. (m >= 2)
+	   (ê°™ì€ ê°’ì´ ì•„ë‹Œ) key ê°’ì„ ì´ˆê³¼í•˜ëŠ” ê°€ìž¥ ì²« ë²ˆì§¸ ì›ì†Œì˜ ìœ„ì¹˜ë¼ëŠ” ê²ƒ
 	   */
 
 	// { 1,2,4,5,6,6,7,7,7,9 };
@@ -92,10 +92,10 @@ int main()
 	/* Min_element / Max_element
 	*  min_element/max_element(begin, end)
 	*  min_element/max_element(begin, end, cmp)
-	*  [begin, end)¿¡¼­ ÃÖ¼Ò/ÃÖ´ë°ªÀÇ iterator¸¦ ±¸ÇÑ´Ù.
+	*  [begin, end)ì—ì„œ ìµœì†Œ/ìµœëŒ€ê°’ì˜ iteratorë¥¼ êµ¬í•œë‹¤.
 	* 
 	*  minmax_element
-	*  min°ú maxÀÇ iterator¸¦ µ¿½Ã¿¡ ±¸ÇÑ´Ù.
+	*  minê³¼ maxì˜ iteratorë¥¼ ë™ì‹œì— êµ¬í•œë‹¤.
 	*  minmax_element(begin, end)
 	*  minmax_element(begin, end, cmp)
 	*/
@@ -110,22 +110,22 @@ int main()
 
 	/* unique
 	*  unique(begin, end)
-	*  [begin, end) ±¸°£¿¡¼­ ¿¬¼ÓµÇ´Â °ªÀ» ÇÏ³ª¸¦ Á¦¿ÜÇÏ°í Á¦°Å
+	*  [begin, end) êµ¬ê°„ì—ì„œ ì—°ì†ë˜ëŠ” ê°’ì„ í•˜ë‚˜ë¥¼ ì œì™¸í•˜ê³  ì œê±°
 	* 
-	*  ½ÇÁ¦·Î ÄÁÅ×ÀÌ³ÊÀÇ Å©±â¸¦ ÁÙÀÌ°Å³ª Á¦°ÅÇÏÁö ¾Ê´Â´Ù.
-	*  Áßº¹À» µ¤¾î¾º¿ì°Å³ª ½ÃÇÁÆ® ½ÃÅ°´Â ¹æ½ÄÀ¸·Î ÀÛµ¿ÇÑ´Ù.
-	*  Áßº¹À» Á¦°ÅÇÑ ÈÄÀÇ End Iterator¸¦ ¸®ÅÏÇÑ´Ù.
-	*  ¿¬¼ÓÀûÀÎ °ª¿¡¼­ Áßº¹À» Á¦°ÅÇÒ ¶§ »ç¿ë
+	*  ì‹¤ì œë¡œ ì»¨í…Œì´ë„ˆì˜ í¬ê¸°ë¥¼ ì¤„ì´ê±°ë‚˜ ì œê±°í•˜ì§€ ì•ŠëŠ”ë‹¤.
+	*  ì¤‘ë³µì„ ë®ì–´ì”Œìš°ê±°ë‚˜ ì‹œí”„íŠ¸ ì‹œí‚¤ëŠ” ë°©ì‹ìœ¼ë¡œ ìž‘ë™í•œë‹¤.
+	*  ì¤‘ë³µì„ ì œê±°í•œ í›„ì˜ End Iteratorë¥¼ ë¦¬í„´í•œë‹¤.
+	*  ì—°ì†ì ì¸ ê°’ì—ì„œ ì¤‘ë³µì„ ì œê±°í•  ë•Œ ì‚¬ìš©
 	* 
-	   Ã¹ ¿ø¼ÒÀÇ ÁÖ¼Ò¿Í ¸¶Áö¸· ¿ø¼ÒÀÇ ´ÙÀ½ ÁÖ¼Ò¸¦ ÀÎÀÚ·Î ³Ñ°ÜÁØ´Ù.
-	   ±¸°£ ³»ÀÇ Áßº¹µÈ ¿ø¼Ò¸¦ ±¸°£ÀÇ ³¡ºÎºÐÀ¸·Î ¹Ð¾îÁÖ°í ¸¶Áö¸· ¿ø¼ÒÀÇ ´ÙÀ½ ÁÖ¼Ò¸¦ ¸®ÅÏ
-	   ±¸°£ ³»ÀÇ ¿ø¼ÒµéÀº Á¤·ÄµÇ¾î ÀÖ¾î¾ß ÇÑ´Ù.
-	   º¸Åë erase¿Í ÇÔ²² Áßº¹µÈ ¿ø¼Ò¸¦ Á¦°ÅÇÏ´Â ¹æ¹ýÀ¸·Î »ç¿ëÇÑ´Ù.
+	   ì²« ì›ì†Œì˜ ì£¼ì†Œì™€ ë§ˆì§€ë§‰ ì›ì†Œì˜ ë‹¤ìŒ ì£¼ì†Œë¥¼ ì¸ìžë¡œ ë„˜ê²¨ì¤€ë‹¤.
+	   êµ¬ê°„ ë‚´ì˜ ì¤‘ë³µëœ ì›ì†Œë¥¼ êµ¬ê°„ì˜ ëë¶€ë¶„ìœ¼ë¡œ ë°€ì–´ì£¼ê³  ë§ˆì§€ë§‰ ì›ì†Œì˜ ë‹¤ìŒ ì£¼ì†Œë¥¼ ë¦¬í„´
+	   êµ¬ê°„ ë‚´ì˜ ì›ì†Œë“¤ì€ ì •ë ¬ë˜ì–´ ìžˆì–´ì•¼ í•œë‹¤.
+	   ë³´í†µ eraseì™€ í•¨ê»˜ ì¤‘ë³µëœ ì›ì†Œë¥¼ ì œê±°í•˜ëŠ” ë°©ë²•ìœ¼ë¡œ ì‚¬ìš©í•œë‹¤.
 	   */
 	vector<int> vec1 = { 10,10,5,5,6,6,8,8,8,1,1,1 };
 	print(vec1);
 
-	// ÇØ´ç vectorÀÇ Áßº¹À» Á¦°ÅÇÏ°í ½ÍÀ» ¶§´Â ÀÌ·¸°Ô ¸¹ÀÌ »ç¿ëÇÑ´Ù.
+	// í•´ë‹¹ vectorì˜ ì¤‘ë³µì„ ì œê±°í•˜ê³  ì‹¶ì„ ë•ŒëŠ” ì´ë ‡ê²Œ ë§Žì´ ì‚¬ìš©í•œë‹¤.
 	vec1.erase(unique(vec1.begin(), vec1.end()), vec1.end());
 	print(vec1);
 	cout << endl;
@@ -137,12 +137,12 @@ int main()
 	   prev_permutation(begin, end)
 	   prev_permutation(begin, end, cmp)
 
-	   [begin, end)¸¦ ¼ø¿­ÀÌ¶ó°í »ý°¢ÇßÀ» ¶§, »çÀü ¼øÀ¸·Î ´ÙÀ½¿¡ ¿À´Â ¼ø¿­À» ¸¸µç´Ù.
-	   ¸¶Áö¸· ¼ø¿­ÀÌ¸é false¸¦ ¸®ÅÏ
+	   [begin, end)ë¥¼ ìˆœì—´ì´ë¼ê³  ìƒê°í–ˆì„ ë•Œ, ì‚¬ì „ ìˆœìœ¼ë¡œ ë‹¤ìŒì— ì˜¤ëŠ” ìˆœì—´ì„ ë§Œë“ ë‹¤.
+	   ë§ˆì§€ë§‰ ìˆœì—´ì´ë©´ falseë¥¼ ë¦¬í„´
 
-	   ±¸°£ ³»ÀÇ ¿ø¼ÒµéÀÇ ´ÙÀ½ ¼ø¿­À» »ý¼ºÇÏ°í true¸¦ ¸®ÅÏÇÑ´Ù.
-	   ´ÙÀ½ ¼ø¿­ÀÌ ¾ø´Ù¸é false¸¦ ¸®ÅÏ
-	   ±¸°£ ³»ÀÇ ¿ø¼ÒµéÀº Á¤·ÄµÇ¾î ÀÖ¾î¾ß ÇÑ´Ù.
+	   êµ¬ê°„ ë‚´ì˜ ì›ì†Œë“¤ì˜ ë‹¤ìŒ ìˆœì—´ì„ ìƒì„±í•˜ê³  trueë¥¼ ë¦¬í„´í•œë‹¤.
+	   ë‹¤ìŒ ìˆœì—´ì´ ì—†ë‹¤ë©´ falseë¥¼ ë¦¬í„´
+	   êµ¬ê°„ ë‚´ì˜ ì›ì†Œë“¤ì€ ì •ë ¬ë˜ì–´ ìžˆì–´ì•¼ í•œë‹¤.
 	   */
 	vector<int> vec2 = { 0,1,2,3 };
 	do
