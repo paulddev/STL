@@ -2,11 +2,18 @@
 #include <deque>
 using namespace std;
 
-// deque(��ũ, ��) - sequence �����̳�
-// ���Ϳ� ����ϰ� O(1)���� ������ ��ġ�� ���� ������ ����
-// ���� ��/�� ���Ҹ� �߰�, ������ O(1)
-// �ٸ�, ������ ��ġ�� �ִ� ���Ҹ� ����/�߰��� O(N)
-// �̷� �κ��� ���ͺ��� ��������, ���� �ӵ��� ���ؼ� �޸𸮸� ����ϴ� �����̳�
+// deque(데크, 덱) - sequence 컨테이너
+// 벡터와 비슷하게 O(1)으로 임의의 위치에 원소 접근이 가능
+// 또한 앞/뒤 원소를 추가, 삭제도 O(1)
+// 다만, 임의의 위치에 있는 원소를 제거/추가는 O(N)
+// 이런 부분은 벡터보다 빠르지만, 실행 속도를 위해서 메모리를 희생하는 컨테이너
+
+// 벡터와 비슷한 컨테이너지만 벡터의 메모리 할당 단점을 보완
+// vector는 새로운 원소를 삽입할 때 할당된 메모리가 부족하면 이전 메모리 블록을 삭제하고
+// 새로운 메모리 블럭을 재할당하며 이전 원소를 모두 복사한다.
+// 반면에 Deque는 새로운 단위의 메모리 블럭을 할당하고 원소를 삽입
+// 또한, 새로운 원소를 순차열 중간에 삽입, 제거 하더라도 원소의 개수가 작은 쪽으로 밀어낸다.
+// 시작과 끝에서 삽입, 삭제가 가능하다.
 
 template<typename T>
 void Print(const deque<T>& dq)
@@ -19,59 +26,59 @@ void Print(const deque<T>& dq)
 
 int main()
 {
-	// ����
+	// 선언
 	deque<int> dq;
 
-	// ����
-	dq.push_back(10);  // �ڷ�
-	dq.push_front(50); // ������
+	// 삽입
+	dq.push_back(10);  // 뒤로
+	dq.push_front(50); // 앞으로
 	dq.push_back(20);
 	dq.push_front(30);
 
-	// ��� 
+	// 출력 
 	Print(dq);
 
-	// �˻�
+	// 검색
 	for (int i = 0; i < dq.size(); ++i)
 		if (dq[i] == 10)
-			cout << "10�� ã�Ҵ�." << endl;
+			cout << "10을 찾았다." << endl;
 
-	// ����
-	dq.pop_back();    // �ڷ� ����
-	dq.pop_front();   // ������ ����
+	// 삭제
+	dq.pop_back();    // 뒤로 삭제
+	dq.pop_front();   // 앞으로 삭제
 
-	// ���
+	// 출력
 	Print(dq);
 
-	// �� ���� ��ɵ�
-	// 3�� ������ 4���� ���� �Ҵ� (������ ���ҵ��� ����)
+	// 그 외의 기능들
+	// 3의 값으로 4개의 원소 할당 (기존의 원소들은 삭제)
 	dq.assign(4, 3);
-	// ���
+	// 출력
 	Print(dq);
-	// �ش� idx ��° ���� ����
-	// ��ȿ ������ �����ϹǷ� dq[idx]���� ����
+	// 해당 idx 번째 원소 참조
+	// 유효 범위를 점검하므로 dq[idx]보다 느림
 	cout << "dq.at(3) : " << dq.at(3) << endl;
-	// ��ȿ ���� üũ�� �������� ����
+	// 유효 범위 체크는 안하지만 빠름
 	cout << "dq[3] : " << dq[3] << endl;
 
 	dq.push_back(10);
 	dq.push_front(20);
 
-	// ù ��° ���� ����
+	// 첫 번째 원소 참조
 	cout << "dq.front() : " << dq.front() << endl;
-	// ������ ���� ����
+	// 마지막 원소 참조
 	cout << "dq.back() : " << dq.back() << endl << endl;
 
-	// ũ�� ����
-	// ���� ũ�Ⱑ �� Ŀ�� ���, ����ִ� ���Ҵ� 0���� �ʱ�ȭ
-	// ũ�Ⱑ �� �۾����ٸ�, �߸��κ��� �Ҵ´�.
+	// 크기 조절
+	// 만약 크기가 더 커질 경우, 비어있는 원소는 0으로 초기화
+	// 크기가 더 작아진다면, 잘린부분은 잃는다.
 	dq.resize(10);
 	cout << "dq.size() : " << dq.size() << endl;
 	cout << "dq.front() : " << dq.front() << endl;
 	Print(dq);
 
 	deque<int> dq2;
-	dq2.swap(dq); // dq�� dq2�� �ٲ۴�.
+	dq2.swap(dq); // dq와 dq2를 바꾼다.
 
 	Print(dq2);
 	cout << "dq.size() : " << dq.size() << endl;
