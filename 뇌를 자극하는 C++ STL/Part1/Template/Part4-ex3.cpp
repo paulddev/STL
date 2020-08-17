@@ -4,7 +4,7 @@ using namespace std;
 template<typename T>
 class Queue
 {
-	// 원형 큐로 구현해서
+	// Circular queue
 	enum { CAP = 100 };
 	T buf[CAP];
 	int front;
