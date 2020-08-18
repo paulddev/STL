@@ -20,8 +20,8 @@ int main()
 	s8 = t;
 	s9 = "Hello!";
 
-	// s:string°´Ã¼, sz:'\0'¹®ÀÚ¿­, c:¹®ÀÚ, off:½ÃÀÛ À§Ä¡, n:±æÀÌ
-    // iter:¹İº¹ÀÚ, p:Æ÷ÀÎÅÍ
+	// s:stringê°ì²´, sz:'\0'ë¬¸ìì—´, c:ë¬¸ì, off:ì‹œì‘ ìœ„ì¹˜, n:ê¸¸ì´
+        // iter:ë°˜ë³µì, p:í¬ì¸í„°
 	cout << "s1.assign(s): " << s1 << endl;
 	cout << "s2.assign(s,off,n): " << s2 << endl;
 	cout << "s3.assign(sz): " << s3 << endl;
