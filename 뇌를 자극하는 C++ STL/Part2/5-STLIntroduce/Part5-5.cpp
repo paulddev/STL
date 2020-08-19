@@ -20,7 +20,7 @@ int main()
 	iter = find(v.begin(), v.end(), 100);
 	//cout << *iter << endl;
 	if (iter == v.end())
-		cout << "100ÀÌ ¾øÀ½" << endl;
+		cout << "100이 없음" << endl;
 
 	return 0;
 }
