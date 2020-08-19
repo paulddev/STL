@@ -16,7 +16,7 @@ int main()
 		cout << *iter << " ";
 	cout << endl;
 
-	// ¿ª¹æÇâ ¹İº¹ÀÚ reverse_iterator
+	// ì—­ë°©í–¥ ë°˜ë³µì reverse_iterator
 	reverse_iterator<vector<int>::iterator> riter(v.end());
 	reverse_iterator<vector<int>::iterator> end_riter(v.begin());
 	for (; riter != end_riter; ++riter)
