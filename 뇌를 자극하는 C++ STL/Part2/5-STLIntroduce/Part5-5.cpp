@@ -14,13 +14,13 @@ int main()
 	v.push_back(50);
 
 	vector<int>::iterator iter;
-	iter = find(v.begin(), v.end(), 20); // [begin, end)¿¡¼­ 20Ã£±â
+	iter = find(v.begin(), v.end(), 20); // [begin, end)êµ¬ê°„ì—ì„œ 20 ì°¾ê¸°
 	cout << *iter << endl;
 
 	iter = find(v.begin(), v.end(), 100);
 	//cout << *iter << endl;
 	if (iter == v.end())
-		cout << "100ÀÌ ¾øÀ½" << endl;
+		cout << "100Ã€ÃŒ Â¾Ã¸Ã€Â½" << endl;
 
 	return 0;
 }
