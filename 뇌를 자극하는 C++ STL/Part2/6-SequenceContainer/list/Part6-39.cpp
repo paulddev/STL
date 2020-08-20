@@ -17,7 +17,7 @@ int main()
 		cout << *iter << " ";
 	cout << endl;
 
-	// reverse() ¸ğµç ¿ø¼Ò¸¦ µÚÁı´Â´Ù.
+	// reverse() ëª¨ë“  ì›ì†Œë¥¼ ë’¤ì§‘ëŠ” ë©¤ë²„ í•¨ìˆ˜
 	lt.reverse();
 	for (iter = lt.begin(); iter != lt.end(); ++iter)
 		cout << *iter << " ";
