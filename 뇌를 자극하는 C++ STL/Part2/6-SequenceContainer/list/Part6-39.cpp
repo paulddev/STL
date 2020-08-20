@@ -17,7 +17,7 @@ int main()
 		cout << *iter << " ";
 	cout << endl;
 
-	// reverse() 모든 원소를 뒤집는 멤버 함수
+	// reverse() 모든 원소를 뒤집는 멤버 함수이다.
 	lt.reverse();
 	for (iter = lt.begin(); iter != lt.end(); ++iter)
 		cout << *iter << " ";
