@@ -19,7 +19,7 @@ int main()
 		cout << "(" << iter->first << ", " << iter->second << ")" << " ";
 	cout << endl;
 
-	m[5] = 200; // key 5ÀÇ value¸¦ 200À¸·Î °»½Å
+	m[5] = 200; // key 5ì˜ valueë¥¼ 200ìœ¼ë¡œ ê°±ì‹ 
 
 	for (const auto& pr : m)
 		cout << "(" << pr.first << ", " << pr.second << ")" << " ";
