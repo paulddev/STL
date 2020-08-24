@@ -15,11 +15,11 @@ int main()
 
 	vector<int>::iterator iter = v.begin();
 	int* p = arr;
-	cout << *iter << ", " << *p << endl; // iter´Â pÃ³·³ µ¿ÀÛ
+	cout << *iter << ", " << *p << endl; // iterëŠ” pì²˜ëŸ¼ ë™ì‘
 
 	vector<int>::const_iterator citer = v.begin();
 	const int* cp = arr;
-	cout << *citer << ", " << *cp << endl; // citer´Â cpÃ³·³ µ¿ÀÛ
+	cout << *citer << ", " << *cp << endl; // citerëŠ” cpì²˜ëŸ¼ ë™ì‘
 
 	const vector<int>::iterator iter_const = v.begin();
 	int* const p_const = arr;
