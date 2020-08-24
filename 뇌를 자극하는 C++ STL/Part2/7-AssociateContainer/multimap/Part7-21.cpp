@@ -24,7 +24,7 @@ int main()
 	upper_iter = mm.upper_bound(3);
 
 	multimap<int, int>::iterator iter;
-	cout << "±¸°£ [lower_iter, upper_iter)ÀÇ ¼øÂ÷¿­: ";
+	cout << "êµ¬ê°„ [lower_iter, upper_iter)ì˜ ìˆœì°¨ì—´: ";
 	for (iter = lower_iter; iter != upper_iter; ++iter)
 		cout << "(" << iter->first << ", " << iter->second << ")" << " ";
 	cout << endl;
@@ -32,7 +32,7 @@ int main()
 	pair<multimap<int, int>::iterator, multimap<int, int>::iterator> iter_pair;
 	iter_pair = mm.equal_range(3);
 
-	cout << "±¸°£ [iter_pair.first, iter_pair.second)ÀÇ ¼øÂ÷¿­: ";
+	cout << "êµ¬ê°„ [iter_pair.first, iter_pair.second)ì˜ ìˆœì°¨ì—´: ";
 	for (iter = iter_pair.first; iter != iter_pair.second; ++iter)
 		cout << "(" << iter->first << ", " << iter->second << ")" << " ";
 	cout << endl;
