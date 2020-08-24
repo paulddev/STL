@@ -20,7 +20,7 @@ int main()
 	cout << "size: " << v.size() << " capacity: " << v.capacity() << endl << endl;
 
 	if (v.empty())
-		cout << "vector¿¡ ¿ø¼Ò°¡ ¾ø´Ù." << endl;
+		cout << "vectorì— ì›ì†Œê°€ ì—†ë‹¤." << endl;
 
 	return 0;
 }
