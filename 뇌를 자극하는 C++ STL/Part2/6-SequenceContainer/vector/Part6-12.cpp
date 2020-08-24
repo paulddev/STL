@@ -15,8 +15,8 @@ int main()
 		cout << v[i] << " ";
 	cout << endl;
 
-	cout << v[0] << ", " << v.front() << endl;// Ã¹ ¹øÂ° ¿ø¼Ò
-	cout << v[4] << ", " << v.back() << endl; // ¸¶Áö¸· ¿ø¼Ò
+	cout << v[0] << ", " << v.front() << endl;// ì²« ë²ˆì§¸ ì›ì†Œ
+	cout << v[4] << ", " << v.back() << endl; // ë§ˆì§€ë§‰ ì›ì†Œ
 
 	return 0;
 }
