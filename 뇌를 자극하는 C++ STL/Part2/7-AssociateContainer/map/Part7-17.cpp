@@ -23,7 +23,7 @@ int main()
 		cout << "(" << pr.first << ", " << pr.second << ")" << " ";
 	cout << endl;
 
-	// key¿Í ¸ÅÇÎµÈ value¸¦ Ãâ·Â
+	// keyì™€ ë§¤í•‘ëœ value ì¶œë ¥
 	cout << m[9] << " ";
 	cout << m[8] << " ";
 	cout << m[7] << " ";
