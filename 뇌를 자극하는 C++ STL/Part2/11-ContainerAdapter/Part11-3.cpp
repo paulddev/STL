@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
 	// max-heap
-	priority_queue<int> pq1; // ±âº» ÄÁÅ×ÀÌ³Ê vector<int>, ±âº» Á¤·Ä ±âÁØ less
+	priority_queue<int> pq1; // ê¸°ë³¸ ì»¨í…Œì´ë„ˆ vector<int>, ê¸°ë³¸ ì •ë ¬ ê¸°ì¤€ less
 	pq1.push(40);
 	pq1.push(20);
 	pq1.push(30);
@@ -16,7 +16,7 @@ int main()
 	cout << "priority_queue[less]" << endl;
 	while (!pq1.empty())
 	{
-		cout << pq1.top() << endl;
+		cout << pq1.top() << endl; //ì°¸ì¡°
 		pq1.pop();
 	}
 	cout << "===============" << endl;
