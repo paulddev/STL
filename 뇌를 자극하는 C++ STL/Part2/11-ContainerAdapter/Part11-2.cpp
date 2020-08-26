@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-	queue<int, list<int>> q; // ¸®½ºÆ®¸¦ »ç¿ëÇÏ´Â queue »ı¼º
+	queue<int, list<int>> q; // ë¦¬ìŠ¤íŠ¸ë¥¼ ì‚¬ìš©í•˜ëŠ” queue ìƒì„±(ê¸°ë³¸ì€ deque)
 
 	q.push(10);
 	q.push(20);
