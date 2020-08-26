@@ -4,8 +4,8 @@ using namespace std;
 
 int main()
 {
-	stack<int> st;
-
+	stack<int> st; // stack의 기본 컨테이너는 deque
+       
 	st.push(10);
 	st.push(20);
 	st.push(30);
