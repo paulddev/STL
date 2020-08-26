@@ -43,9 +43,9 @@ int main()
 	cout << "upper : " << *iter_upper << endl << endl;
 	
 	if (iter_lower != iter_upper)
-		cout << "55°¡ s¿¡ ÀÖ´Ù." << endl;
+		cout << "55ê°€ setì— ì¡´ì¬" << endl;
 	else
-		cout << "55°¡ s¿¡ ¾ø´Ù." << endl;
+		cout << "55ê°€ setì— ì¡´ì¬í•˜ì§€ ì•ŠìŒ" << endl;
 
 	return 0;
 
