@@ -19,7 +19,7 @@ int main()
 		cout << *iter << " ";
 	cout << endl;
 
-	cout << "¿ø¼Ò 50ÀÇ °³¼ö: " << s.count(50) << endl;
-	cout << "¿ø¼Ò 100ÀÇ °³¼ö: " << s.count(100) << endl;
+	cout << "ì›ì†Œ 50ì˜ ê°œìˆ˜: " << s.count(50) << endl;
+	cout << "ì›ì†Œ 100: " << s.count(100) << endl;
 	return 0;
 }
