@@ -21,9 +21,9 @@ int main()
 
 	iter = s.find(30);
 	if (iter != s.end())
-		cout << *iter << "°¡ s¿¡ ÀÖ½À´Ï´Ù." << endl;
+		cout << *iter << "ê°€ setì— ì¡´ì¬" << endl;
 	else
-		cout << "¾ø½À´Ï´Ù." << endl;
+		cout << "30ì´ setì— ì—†ìŒ" << endl;
 
 	return 0;
 }
