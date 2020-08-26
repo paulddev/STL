@@ -32,9 +32,9 @@ int main()
 
 
 	if (iter_pair.first != iter_pair.second)
-		cout << "55°¡ s¿¡ ÀÖ´Ù" << endl;
+		cout << "55ê°€ setì— ì¡´ì¬" << endl;
 	else
-		cout << "55°¡ s¿¡ ¾ø´Ù" << endl;
+		cout << "55ê°€ setì— ì¡´ì¬í•˜ì§€ ì•ŠìŒ" << endl;
 
 	return 0;
 
