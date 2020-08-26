@@ -6,10 +6,10 @@ int main()
 {
 	set<int, less<int> > s;
 
-	// 30°ú 50ÀÇ ºñ±³
+	// 30ê³¼ 50ì„ ë¹„êµ
 	cout << (!s.key_comp()(30, 50) && !s.key_comp()(50, 30)) << endl;
 
-	// 30°ú 30ÀÇ ºñ±³
+	// 30ê³¼ 30ì„ ë¹„êµ
 	cout << (!s.key_comp()(30, 30) && !s.key_comp()(30, 30)) << endl;
 
 	return 0;
