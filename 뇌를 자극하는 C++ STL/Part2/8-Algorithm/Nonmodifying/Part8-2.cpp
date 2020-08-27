@@ -22,12 +22,12 @@ int main()
 
 	iter = adjacent_find(iter_b, iter_e);
 
-	if (iter != iter_e) // ¸Â´Â Ç¥Çö
+	if (iter != iter_e) // ë§ëŠ” í‘œí˜„
 		cout << *iter << endl;
 
 	cout << "==============================" << endl;
 
-	if (iter != v.end()) // Æ²¸° Ç¥Çö
+	if (iter != v.end()) // í‹€ë¦° í‘œí˜„
 		cout << *iter << endl;
 
 	iter_b = v.begin();
