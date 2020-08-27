@@ -22,6 +22,6 @@ int main()
 	cout << endl;
 
 	int n = count_if(v.begin(), v.end(), Pred);
-	cout << "25º¸´Ù Å« ¿ø¼ÒÀÇ °³¼ö: " << n << endl;
+	cout << "25ë³´ë‹¤ í° ì›ì†Œì˜ ê°œìˆ˜: " << n << endl;
 	return 0;
 }
