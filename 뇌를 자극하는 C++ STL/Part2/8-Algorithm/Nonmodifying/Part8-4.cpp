@@ -18,6 +18,6 @@ int main()
 	cout << endl;
 
 	int n = count(v.begin(), v.end(), 30);
-	cout << "30ÀÇ °³¼ö: " << n << endl;
+	cout << "30ì˜ ê°œìˆ˜: " << n << endl;
 	return 0;
 }
