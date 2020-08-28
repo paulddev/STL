@@ -36,7 +36,7 @@ int main()
 
 	vector<int> v3(10);
 	vector<int>::iterator iter_end;
-	// STL greater »ç¿ëÇÏ¸é
+	// STL greater ì‚¬ìš©í•˜ë©´
 	// iter_end = merge(v1.begin(), v1.end(), v2.begin(), v2.end(), v3.begin(), greater<int>());
 	iter_end = merge(v1.begin(), v1.end(), v2.begin(), v2.end(), v3.begin(), Greater<int>());
 
@@ -44,6 +44,6 @@ int main()
 	Print(v2, 2);
 	Print(v3, 3);
 
-	cout << "v3(ÇÕº´ ¼øÂ÷¿­): " << *v3.begin() << "~" << *(iter_end - 1) << endl;
+	cout << "v3(í•©ë³‘ ìˆœì°¨ì—´): " << *v3.begin() << "~" << *(iter_end - 1) << endl;
 	return 0;
 }
