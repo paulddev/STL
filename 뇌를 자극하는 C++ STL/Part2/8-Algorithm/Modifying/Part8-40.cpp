@@ -40,7 +40,7 @@ int main()
 	Print(v1, 1);
 	Print(v2, 2);
 	Print(v3, 3);
-	cout << "[v3.begin(), iter_end)ÀÇ ¼øÂ÷¿­: ";
+	cout << "[v3.begin(), iter_end)ì˜ ìˆœì°¨ì—´: ";
 	Print(v3, 3);
 
 	return 0;
