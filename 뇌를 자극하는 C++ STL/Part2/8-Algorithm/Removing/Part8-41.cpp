@@ -27,7 +27,7 @@ int main()
 
 	Print(v1, 1);
 
-	cout << "remove ÈÄ [v.begin(), iter_end) ¼øÂ÷¿­: ";
+	cout << "remove í›„ [v.begin(), iter_end) ìˆœì°¨ì—´: ";
 	for (vector<int>::iterator iter = v1.begin(); iter != iter_end; ++iter)
 		cout << *iter << " ";
 	cout << endl;
